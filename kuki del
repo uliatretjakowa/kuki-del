@@ -1,0 +1,13 @@
+import browser_cookie3
+
+def delete_cookies(browser_name):
+    try:
+        cookies = browser_cookie3.load(browser=browser_name)
+        for cookie in cookies:
+            cookie.clear()
+        print(f"Cookies in {browser_name} successfully deleted.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Пример использования для браузера Chrome
+delete_cookies("chrome")
